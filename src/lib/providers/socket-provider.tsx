@@ -23,9 +23,9 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const socketInstance = new (ClientIO as any)(
-      'https://co-lab-ai.vercel.app',
+      "https://co-lab-ai.vercel.app",
       {
-        path: '/api/socket/io',
+        path: "/api/socket/io",
         addTrailingSlash: false,
       }
     );
