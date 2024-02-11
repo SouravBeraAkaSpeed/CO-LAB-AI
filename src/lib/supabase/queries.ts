@@ -74,7 +74,7 @@ export const getFolders = async (workspaceId: string) => {
 
 export const getActiveProductsWithPrice = async () => {
   try {
-    console.log("test here");
+    
     const res = await db.query.products.findMany({
       where: (pro, { eq }) => eq(pro.active, true),
 
@@ -138,6 +138,16 @@ export const getSharedWorkspaces = async (userId: string) => {
     .innerJoin(collaborators, eq(workspaces.id, collaborators.workspaceId))
     .where(eq(workspaces.workspaceOwner, userId))) as workspace[];
   return sharedWorkspaces;
+};
+
+
+export const getUsersFromSearch = async (email: string) => {
+  if (!email) return [];
+  const accounts = db
+    .select()
+    .from(users)
+    .where(ilike(users.email, `${email}%`));
+  return accounts;
 };
 
 export const createFile = async (file: File) => {
