@@ -16,9 +16,7 @@ export const formatPrice = (price: Price) => {
 };
 
 export const getURL = () => {
-  let url =
-    process?.env?.NEXT_PUBLIC_SITE_URL ??
-    'https://co-lab-ai.vercel.app/';
+  let url ='https://co-lab-ai.vercel.app/'
 
   url = url.includes('http') ? url : `https://${url}`;
   url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
