@@ -16,7 +16,12 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
     const io = new ServerIO(httpServer, {
       path,
       addTrailingSlash: false,
-      cors: { origin: req.headers.origin || "*", methods: ["GET", "POST"],allowedHeaders: ['Content-Type','Authorization'] }, // TODO: make this configurable?
+      cors: {
+        origin: "https://co-lab-ai.up.railway.app",
+        methods: ["GET", "POST"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true,
+      },
     });
     io.on("connection", (s) => {
       s.on("create-room", (fileId) => {
