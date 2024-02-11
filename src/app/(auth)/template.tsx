@@ -1,4 +1,4 @@
-import React from "react";
+import { Suspense } from "react";
 
 interface TemplateProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ const Template: React.FC<TemplateProps> = ({ children }) => {
       p-6 flex 
       justify-center"
     >
-      {children}
+      <Suspense>{children}</Suspense>
     </div>
   );
 };

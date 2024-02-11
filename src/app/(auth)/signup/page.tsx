@@ -25,6 +25,7 @@ import { MailCheck } from "lucide-react";
 import { FormSchema } from "@/lib/types";
 import { actionSignUpUser } from "@/lib/server-actions/auth-actions";
 
+
 const SignUpFormSchema = z
   .object({
     email: z.string().describe("Email").email({ message: "Invalid Email" }),
