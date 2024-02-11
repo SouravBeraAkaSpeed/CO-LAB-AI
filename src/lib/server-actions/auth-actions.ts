@@ -33,7 +33,7 @@ export async function actionSignUpUser({
     email,
     password,
     options: {
-      emailRedirectTo: `https://co-lab-ai.vercel.app/api/auth/callback`,
+      emailRedirectTo: `https://co-lab-ai.up.railway.app/api/auth/callback`,
     },
   });
   return response;

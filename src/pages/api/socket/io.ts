@@ -19,8 +19,6 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
       cors: {
         origin: "https://co-lab-ai.up.railway.app",
         methods: ["GET", "POST"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-        credentials: true,
       },
     });
     io.on("connection", (s) => {
