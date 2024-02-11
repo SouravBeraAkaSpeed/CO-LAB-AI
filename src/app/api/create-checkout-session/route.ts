@@ -9,6 +9,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   const { price, quantity = 1, metadata = {} } = await request.json();
   try {
+    cookies().getAll();
     const supabase = createRouteHandlerClient({ cookies });
     const {
       data: { user },

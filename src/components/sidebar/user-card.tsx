@@ -14,6 +14,7 @@ interface UserCardProps {
 }
 
 const UserCard: React.FC<UserCardProps> = async ({ subscription }) => {
+  cookies().getAll();
   const supabase = createServerComponentClient({ cookies });
   const {
     data: { user },
