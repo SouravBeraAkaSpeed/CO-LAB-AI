@@ -10,23 +10,21 @@ export const config = {
 };
 
 const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
-  
   if (!res.socket.server.io) {
     const path = "/api/socket/io";
     const httpServer: NetServer = res.socket.server as any;
     const io = new ServerIO(httpServer, {
       path,
       addTrailingSlash: false,
-      cors: { origin: req.headers.origin || "*", methods: ["GET", "POST"] },
+      cors: { origin: req.headers.origin || "*", methods: ["GET", "POST"],allowedHeaders: ['Content-Type','Authorization'] }, // TODO: make this configurable?
     });
     io.on("connection", (s) => {
       s.on("create-room", (fileId) => {
         s.join(fileId);
-
       });
       s.on("send-changes", (deltas, fileId) => {
         console.log("CHANGE");
-        
+
         s.to(fileId).emit("receive-changes", deltas, fileId);
       });
       s.on("send-cursor-move", (range, fileId, cursorId) => {
