@@ -53,7 +53,7 @@ const HomePage = () => {
             bg-background
           "
           >
-            Get Cypress Free
+            Get Co-LAB AI Free
           </Button>
         </div>
         <div
