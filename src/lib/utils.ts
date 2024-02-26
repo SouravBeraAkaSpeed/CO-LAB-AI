@@ -16,7 +16,7 @@ export const formatPrice = (price: Price) => {
 };
 
 export const getURL = () => {
-  let url ='https://co-lab-ai.up.railway.app'
+  let url ='https://www.co-labai.com'
 
   url = url.includes('http') ? url : `https://${url}`;
   url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;

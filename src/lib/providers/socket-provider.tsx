@@ -23,7 +23,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const socketInstance = new (ClientIO as any)(
-      "https://co-lab-ai.up.railway.app",
+      "https://www.co-labai.com",
       {
         path: "/api/socket/io",
         addTrailingSlash: false,

@@ -33,7 +33,7 @@ export async function actionSignUpUser({
     email,
     password,
     options: {
-      emailRedirectTo: `https://co-lab-ai.up.railway.app/api/auth/callback`,
+      emailRedirectTo: `https://www.co-labai.com/api/auth/callback`,
     },
   });
   return response;

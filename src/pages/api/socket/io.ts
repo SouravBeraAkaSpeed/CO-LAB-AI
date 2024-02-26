@@ -17,7 +17,7 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
       path,
       addTrailingSlash: false,
       cors: {
-        origin: "https://co-lab-ai.up.railway.app",
+        origin: "https://www.co-labai.com",
         methods: ["GET", "POST"],
       },
     });
